@@ -1,0 +1,39 @@
+{
+  "name": "eventuate-map",
+  "version": "0.0.0",
+  "description": "create a mapped eventuate",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Georgette/eventuate-map.git"
+  },
+  "keywords": [
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Georgette/eventuate-map/issues"
+  },
+  "homepage": "https://github.com/Georgette/eventuate-map",
+  "author": {
+    "name": "Jason Pincin",
+    "email": "jason@pincin.com",
+    "url": "http://jason.pincin.com/"
+  },
+  "contributors": [
+  ],
+  "devDependencies": {
+    "@jasonpincin/standard": "~5.0.0-7",
+    "istanbul": "~0.3.17",
+    "opn": "~1.0.2",
+    "tap-dot": "~1.0.0",
+    "tap-spec": "~4.1.0",
+    "tape": "~4.2.0",
+    "phantomjs": "~1.9.18",
+    "zuul": "~3.3.0"
+  },
+  "scripts": {
+    "test": "make npm-test",
+    "coverage": "make npm-coverage",
+    "browser-test": "make browser-test"
+  }
+}
