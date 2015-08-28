@@ -3,7 +3,6 @@
 [![NPM version](https://badge.fury.io/js/eventuate-map.png)](http://badge.fury.io/js/eventuate-map)
 [![Build Status](https://travis-ci.org/Georgette/eventuate-map.svg?branch=master)](https://travis-ci.org/Georgette/eventuate-map)
 [![Coverage Status](https://coveralls.io/repos/Georgette/eventuate-map/badge.png?branch=master)](https://coveralls.io/r/Georgette/eventuate-map?branch=master)
-<!-- [![Sauce Test Status](https://saucelabs.com/browser-matrix/Georgette_github.svg)](https://saucelabs.com/u/Georgette_github) -->
 
 create a mapped eventuate
 
