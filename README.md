@@ -57,7 +57,7 @@ var upstreamEventuate = eventuate()
 
 ### var mappedEventuate = map(upstreamEventuate, mapFunc)
 
-Returns a new eventuate which re-produces events from eventuate `upstreamEventuate` but has the `mapFunc` manipulate the payload.  `mapFunc` should have the signature `function (data) { }`. This function receives all event data from `upstreamEventuate`.
+Returns a new eventuate which produces mapped event payloads from eventuate `upstreamEventuate` using `mapFunc` .  `mapFunc` should have the signature `function (data) { }`, and return the mapped payload. This function receives all event data from `upstreamEventuate`.
 
 If `upstreamEventuate` is an unmonitored eventuate, `filteredEventuate` will return an unmonitored eventuate.
 
