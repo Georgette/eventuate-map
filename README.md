@@ -13,27 +13,28 @@ create a mapped eventuate
 ```javascript
 
 var eventuate = require('eventuate'),
-    filter    = require('eventuate-map')
+    map       = require('eventuate-map')
 
 var pie = eventuate()
 pie(function (p) {
     console.log('%s served...', p.type)
 })
 
-var addTopping = filter(pie, function (pie) {
+var addTopping = map(pie, function (pie) {
     switch(pie.type) {
-        case shoofly:
+        case 'shoofly':
             pie.topping = 'vanilla ice cream'
             break;
-        case pumpkin:
+        case 'pumpkin':
             pie.topping = 'whipped cream'
             break;
-        case apple:
+        case 'apple':
             pie.topping = 'maple walnut syrup'
             break;
         default:
             pie.topping = 'a cherry'
     }
+    return pie
 })
 
 addTopping(function (p) {
