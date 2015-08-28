@@ -9,13 +9,71 @@ create a mapped eventuate
 
 ## example
 
+
 ```javascript
-TODO
+
+var eventuate = require('eventuate'),
+    filter    = require('eventuate-map')
+
+var pie = eventuate()
+pie(function (p) {
+    console.log('%s served...', p.type)
+})
+
+var addTopping = filter(pie, function (pie) {
+    switch(pie.type) {
+        case shoofly:
+            pie.topping = 'vanilla ice cream'
+            break;
+        case pumpkin:
+            pie.topping = 'whipped cream'
+            break;
+        case apple:
+            pie.topping = 'maple walnut syrup'
+            break;
+        default:
+            pie.topping = 'a cherry'
+    }
+})
+
+addTopping(function (p) {
+    console.log('Love %s on my %s pie', p.topping, p.type)
+})
+
+
+pie.produce({type: 'apple' })
+pie.produce({type: 'shoofly' })
+pie.produce({type: 'pumpkin' })
+
 ```
 
 ## api
 
-TODO
+```javascript
+var eventuate = require('eventuate')
+var map       = require('eventuate-map')
+
+var upstreamEventuate = eventuate()
+```
+
+### var mappedEventuate = map(upstreamEventuate, mapFunc)
+
+Returns a new eventuate which re-produces events from eventuate `upstreamEventuate` but has the `mapFunc` manipulate the payload.  `mapFunc` should have the signature `function (data) { }`. This function receives all event data from `upstreamEventuate`.
+
+If `upstreamEventuate` is an unmonitored eventuate, `filteredEventuate` will return an unmonitored eventuate.
+
+### mappedEventuate.unsubscribe()
+
+Stop consuming events from `upstreamEventuate` (and thus stop producing events).
+
+### mappedEventuate.upstreamConsumer
+
+The function added as a consumer to the `upstreamEventuate`. Example:
+
+```javascript
+var consumerIdx = upstreamEventuate.consumers.indexOf(mappedEventuate.upstreamConsumer)
+assert(consumerIdx >= 0)
+```
 
 ## install
 
