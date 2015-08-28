@@ -1,6 +1,6 @@
 {
   "name": "eventuate-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create a mapped eventuate",
   "main": "index.js",
   "repository": {
