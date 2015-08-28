@@ -20,16 +20,16 @@ pie(function (p) {
 })
 
 var addTopping = map(pie, function (pie) {
-    switch(pie.type) {
+    switch (pie.type) {
         case 'shoofly':
             pie.topping = 'vanilla ice cream'
-            break;
+            break
         case 'pumpkin':
             pie.topping = 'whipped cream'
-            break;
+            break
         case 'apple':
             pie.topping = 'maple walnut syrup'
-            break;
+            break
         default:
             pie.topping = 'a cherry'
     }
@@ -39,7 +39,6 @@ var addTopping = map(pie, function (pie) {
 addTopping(function (p) {
     console.log('Love %s on my %s pie', p.topping, p.type)
 })
-
 
 pie.produce({type: 'apple' })
 pie.produce({type: 'shoofly' })
